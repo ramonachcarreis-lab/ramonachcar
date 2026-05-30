@@ -1,0 +1,134 @@
+[
+  {
+    "clientKey": "11999999999",
+    "clientName": "Festa do Joãozinho",
+    "phone": "11999999999",
+    "unitId": "sp-centro",
+    "totalSpent": 850,
+    "pointsEarned": 1,
+    "pointsRedeemed": 0,
+    "openBalanceReais": 350,
+    "history": [
+      {
+        "id": "ly_1779458527478_u4gaw",
+        "date": "2026-05-22T14:02:07.478Z",
+        "type": "earn",
+        "amount": 850,
+        "pointsAdded": 1,
+        "eventId": 1,
+        "note": "Locação paga #1",
+        "registeredBy": "Sincronização"
+      }
+    ]
+  },
+  {
+    "clientKey": "11977777777",
+    "clientName": "Festa da Julia",
+    "phone": "11977777777",
+    "unitId": "sp-centro",
+    "totalSpent": 950,
+    "pointsEarned": 1,
+    "pointsRedeemed": 0,
+    "openBalanceReais": 450,
+    "history": [
+      {
+        "id": "ly_1779458527478_d6bax",
+        "date": "2026-05-22T14:02:07.478Z",
+        "type": "earn",
+        "amount": 950,
+        "pointsAdded": 1,
+        "eventId": 991,
+        "note": "Locação paga #991",
+        "registeredBy": "Sincronização"
+      }
+    ]
+  },
+  {
+    "clientKey": "11976665544",
+    "clientName": "Chá da Helena",
+    "phone": "11976665544",
+    "unitId": "sp-centro",
+    "totalSpent": 890,
+    "pointsEarned": 1,
+    "pointsRedeemed": 0,
+    "openBalanceReais": 390,
+    "history": [
+      {
+        "id": "ly_1779726374818_9sffg",
+        "date": "2026-05-25T16:26:14.818Z",
+        "type": "earn",
+        "amount": 890,
+        "pointsAdded": 1,
+        "eventId": 9012,
+        "note": "Locação paga #9012",
+        "registeredBy": "Sincronização"
+      }
+    ]
+  },
+  {
+    "clientKey": "11954443322",
+    "clientName": "Aniversário Lucas",
+    "phone": "11954443322",
+    "unitId": "sp-centro",
+    "totalSpent": 750,
+    "pointsEarned": 1,
+    "pointsRedeemed": 0,
+    "openBalanceReais": 250,
+    "history": [
+      {
+        "id": "ly_1779726374818_17yc6",
+        "date": "2026-05-25T16:26:14.818Z",
+        "type": "earn",
+        "amount": 750,
+        "pointsAdded": 1,
+        "eventId": 9014,
+        "note": "Locação paga #9014",
+        "registeredBy": "Sincronização"
+      }
+    ]
+  },
+  {
+    "clientKey": "11943332211",
+    "clientName": "Evento Rede Sul",
+    "phone": "11943332211",
+    "unitId": "sp-zona-sul",
+    "totalSpent": 920,
+    "pointsEarned": 1,
+    "pointsRedeemed": 0,
+    "openBalanceReais": 420,
+    "history": [
+      {
+        "id": "ly_1779726374818_ilkmo",
+        "date": "2026-05-25T16:26:14.818Z",
+        "type": "earn",
+        "amount": 920,
+        "pointsAdded": 1,
+        "eventId": 9015,
+        "note": "Locação paga #9015",
+        "registeredBy": "Sincronização"
+      }
+    ]
+  },
+  {
+    "clientKey": "11921110099",
+    "clientName": "Festa do Mateus",
+    "phone": "11921110099",
+    "unitId": "sp-centro",
+    "totalSpent": 600,
+    "pointsEarned": 1,
+    "pointsRedeemed": 0,
+    "openBalanceReais": 100,
+    "history": [
+      {
+        "id": "ly_1779726374818_1ea46",
+        "date": "2026-05-25T16:26:14.818Z",
+        "type": "earn",
+        "amount": 600,
+        "pointsAdded": 1,
+        "eventId": 9017,
+        "note": "Locação paga #9017",
+        "registeredBy": "Sincronização"
+      }
+    ]
+  }
+]
