@@ -1,0 +1,25 @@
+# Backend Node (API + arquivos em /data). Necessário para CRM, assinatura, campo, WhatsApp.
+services:
+  - type: web
+    name: estofado-pro-api
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build:web
+    startCommand: npm run start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: APP_URL
+        value: https://estofadospro.netlify.app
+      - key: ALLOW_NETLIFY_CORS
+        value: "true"
+      - key: VAPID_PUBLIC_KEY
+        sync: false
+      - key: VAPID_PRIVATE_KEY
+        sync: false
+      - key: VAPID_SUBJECT
+        value: mailto:admin@estofadopro.com.br
+      - key: WHATSAPP_ACCESS_TOKEN
+        sync: false
+      - key: WHATSAPP_PHONE_NUMBER_ID
+        sync: false

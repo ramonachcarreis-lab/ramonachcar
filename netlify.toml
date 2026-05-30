@@ -1,0 +1,10 @@
+# Site estático (dist). APIs via proxy em public/_redirects (gerado no build).
+# Defina NETLIFY_API_URL = URL do backend Render (ex.: https://estofado-pro.onrender.com)
+
+[build]
+  command = "npm run build:netlify"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NETLIFY_API_URL = "https://estofado-pro-api.onrender.com"
