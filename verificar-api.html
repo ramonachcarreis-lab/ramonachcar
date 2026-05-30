@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Verificar API — Estofado Pro</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 520px; margin: 2rem auto; padding: 1rem; background: #fff; color: #111; }
+    h1 { font-size: 1.25rem; }
+    pre { background: #f4f4f5; padding: 1rem; border-radius: 8px; font-size: 14px; word-break: break-all; }
+    .ok { color: #15803d; font-weight: 800; }
+    .err { color: #b91c1c; font-weight: 800; }
+    p { line-height: 1.5; font-size: 15px; }
+  </style>
+</head>
+<body>
+  <h1>Teste do servidor (API)</h1>
+  <p id="status">Testando…</p>
+  <pre id="out">—</pre>
+  <p><strong>Correto:</strong> aparece <code>{"status":"ok"}</code></p>
+  <p><strong>Tela preta em /api/health:</strong> falta o arquivo <code>_redirects</code> no Netlify ou o Render não está no ar.</p>
+  <script>
+    (async () => {
+      const status = document.getElementById('status');
+      const out = document.getElementById('out');
+      try {
+        const res = await fetch('/api/health', { cache: 'no-store' });
+        const text = await res.text();
+        out.textContent = 'HTTP ' + res.status + '\n\n' + (text || '(vazio)');
+        if (res.ok && text.includes('ok')) {
+          status.innerHTML = '<span class="ok">API funcionando</span>';
+        } else {
+          status.innerHTML = '<span class="err">API com problema</span>';
+        }
+      } catch (e) {
+        status.innerHTML = '<span class="err">Sem conexão com a API</span>';
+        out.textContent = String(e);
+      }
+    })();
+  </script>
+</body>
+</html>

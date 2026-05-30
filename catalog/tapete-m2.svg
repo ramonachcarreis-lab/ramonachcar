@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="Tapete">
+  <defs>
+    <linearGradient id="floorT" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="58%" stop-color="#fffef6"/>
+      <stop offset="100%" stop-color="#FFE566"/>
+    </linearGradient>
+    <radialGradient id="glowT" cx="50%" cy="78%" r="45%">
+      <stop offset="0%" stop-color="#FFD54F" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="weave" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#8d6e63"/>
+      <path d="M0 6h12M6 0v12" stroke="#6d4c41" stroke-width="0.8" opacity="0.35"/>
+    </pattern>
+    <filter id="shT" x="-10%" y="-5%" width="120%" height="115%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#F9A825" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <rect width="400" height="320" fill="url(#floorT)"/>
+  <ellipse cx="200" cy="262" rx="130" ry="20" fill="url(#glowT)"/>
+  <g filter="url(#shT)">
+    <rect x="72" y="108" width="256" height="140" rx="10" fill="url(#weave)" stroke="#FFC107" stroke-width="3"/>
+    <rect x="88" y="124" width="224" height="108" rx="6" fill="#795548" opacity="0.25"/>
+    <circle cx="200" cy="178" r="36" fill="none" stroke="#FFC107" stroke-width="2.5" opacity="0.7"/>
+    <text x="200" y="186" text-anchor="middle" fill="#FFFDE7" font-size="22" font-family="system-ui,sans-serif" font-weight="800">m²</text>
+  </g>
+</svg>

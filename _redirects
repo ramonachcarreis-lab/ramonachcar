@@ -1,0 +1,5 @@
+# API → backend Node (https://estofado-pro-api.onrender.com)
+/api/*  https://estofado-pro-api.onrender.com/api/:splat  200
+
+# SPA
+/*    /index.html   200
