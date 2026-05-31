@@ -8,3 +8,15 @@
 [build.environment]
   NODE_VERSION = "22"
   NETLIFY_API_URL = "https://estofado-pro-api.onrender.com"
+
+# Proxy da API (também vale se o deploy for pelo Git, não só pelo Drop)
+[[redirects]]
+  from = "/api/*"
+  to = "https://estofado-pro-api.onrender.com/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

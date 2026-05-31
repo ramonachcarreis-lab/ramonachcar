@@ -41,6 +41,16 @@ export default defineConfig(({ mode }) => {
         workbox: {
           globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
           navigateFallback: '/index.html',
+          /** Não interceptar API nem links públicos — evita tela preta em /api/health */
+          navigateFallbackDenylist: [
+            /^\/api\//,
+            /^\/assinatura/,
+            /^\/assinatura-servico/,
+            /^\/servico\//,
+            /^\/cliente\//,
+            /^\/avaliacao\//,
+            /^\/verificar-api/,
+          ],
           importScripts: ['/push-handler.js'],
         },
         devOptions: {

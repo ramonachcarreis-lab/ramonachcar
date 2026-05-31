@@ -1,54 +1,24 @@
-# Estofado Pro
+# Catálogo visual — Estofado Pro
 
-## Colocar no ar (site + API + APK)
+## Fotos das peças (`*.svg` na raiz)
 
-Guia passo a passo para leigos: **[DEPLOY-LEIGO.md](./DEPLOY-LEIGO.md)**  
-Resumo técnico: **[DEPLOY-NETLIFY.md](./DEPLOY-NETLIFY.md)**
+Ilustrações em estilo **estúdio**: fundo branco com “piso” amarelo infinito (degradê) e destaque âmbar na peça.
 
-Sistema de gestão para rede de profissionais de **limpeza e impermeabilização de estofados** (baseado na arquitetura PlayLivery).
+| Arquivo | Peça |
+|---------|------|
+| sofa-3l.svg | Sofá 3 lugares |
+| sofa-4l.svg | Sofá 4 lugares |
+| poltrona.svg | Poltrona |
+| colchao.svg | Colchão |
+| tapete-m2.svg | Tapete (m²) |
+| servico-estofado.svg | Peça extra / genérica |
 
-## Papéis
+## Ícones (`icons/`)
 
-| Papel | Código | Uso |
-|-------|--------|-----|
-| Admin | `admin` | Rede, metas comerciais, cadastro |
-| Comercial | `commercial` | CRM, propostas, contratos, agenda |
-| Operador / Unidade | `licensee` | Agenda, execução (Tempo), finanças, CRM local |
+Mesmo fundo branco → amarelo para higienização, impermeabilização e pacote completo.
 
-## Login demo
+## Fotos reais da unidade
 
-- `admin` / `admin123`
-- `joao.comercial` / `comercial123`
-- `sp.centro` / `licenciado123`
+O licenciado pode enviar foto própria em **Configurações → Peças** (substitui a ilustração só naquela unidade).
 
-## Executar
-
-```bash
-cd 03
-npm install
-npm run dev
-```
-
-Abra `http://localhost:3000`
-
-## Marca
-
-- Cores: preto, amarelo (#FFC107), branco
-- Fidelidade: **Clube Panda** · moeda **Panda Coin**
-
-## Funcionalidades mantidas
-
-- CRM e funil (negociando → aguardando → em execução → fechados)
-- Proposta e **contrato com assinatura digital**
-- PIX sede / unidade
-- Rotas e despesas de logística
-- Faturamento por período (diário/mensal via filtro de datas)
-- Clube Panda (tokens + Panda Coins)
-
-## Catálogo padrão
-
-Sofá 3/4 lugares, poltrona, colchão casal/queen, king, tapete (m²) — configurável em **Configurações** por unidade.
-
-## Estoque
-
-Produtos de estoque com abatimento interno ao concluir serviço (`utils/stockInventory.ts`).
+Para recarregar as ilustrações padrão: **Restaurar catálogo padrão** + Ctrl+F5.

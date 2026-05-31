@@ -40,7 +40,7 @@ export function registerNotificationRoutes(app: Express): void {
       return sendError(
         res,
         503,
-        'Push não configurado. Rode: npx tsx scripts/generate-vapid.ts e copie as chaves para o .env'
+        'Alertas no celular indisponíveis no momento.'
       );
     }
     res.json({ publicKey });

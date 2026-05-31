@@ -41,7 +41,11 @@ npm run build:netlify
 Arrastar a pasta **`dist`** em https://app.netlify.com/drop  
 (ou redeploy no painel Netlify se usa Git)
 
-Teste: `https://estofadospro.netlify.app/api/health` → **ok**
+Teste: `https://estofadospro.netlify.app/api/health` → texto `{"status":"ok"}`  
+**Não use só a barra de endereço se aparecer tela preta** — abra antes:  
+`https://estofadospro.netlify.app/verificar-api.html` (página branca com resultado legível)
+
+**Tela preta em /api/health** = Netlify sem `_redirects` no deploy OU PWA antigo no celular. Republicar `dist` e limpar cache do site no Chrome.
 
 ### 3) APK
 

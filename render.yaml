@@ -4,11 +4,13 @@ services:
     name: estofado-pro-api
     runtime: node
     plan: free
-    buildCommand: npm install && npm run build:web
+    buildCommand: npm install --include=dev && npm run build:web
     startCommand: npm run start:prod
     envVars:
       - key: NODE_ENV
         value: production
+      - key: NPM_CONFIG_PRODUCTION
+        value: "false"
       - key: APP_URL
         value: https://estofadospro.netlify.app
       - key: ALLOW_NETLIFY_CORS

@@ -15,16 +15,10 @@ function formatWhatsAppApiError(metaMsg: string): string {
     lower.includes('session has expired') ||
     lower.includes('error validating access token')
   ) {
-    return (
-      'Token do WhatsApp inválido ou expirado. No Meta for Developers gere um novo Access Token, ' +
-      'atualize WHATSAPP_ACCESS_TOKEN no arquivo .env da pasta 03 e reinicie npm run dev.'
-    );
+    return 'WhatsApp da empresa temporariamente indisponível. Fale com o suporte Estofado Pro.';
   }
   if (metaMsg.includes('131030') || lower.includes('not in allowed list')) {
-    return (
-      'Seu número ainda não está na lista de teste da Meta. No painel WhatsApp → API Setup, ' +
-      'adicione o WhatsApp com DDD (ex.: 5517991619082) como destinatário de teste.'
-    );
+    return 'Seu número ainda não está autorizado para receber mensagens automáticas. Fale com o suporte.';
   }
   if (metaMsg.includes('131047') || lower.includes('re-engagement')) {
     return (
@@ -42,13 +36,12 @@ export function getWhatsAppStatus(): WhatsAppStatus {
     return {
       configured: true,
       phoneNumberId: phoneId,
-      hint: 'Credenciais no .env detectadas. Use o teste abaixo para validar o token na Meta.',
+      hint: 'WhatsApp da empresa em configuração.',
     };
   }
   return {
     configured: false,
-    hint:
-      'Configure WHATSAPP_ACCESS_TOKEN e WHATSAPP_PHONE_NUMBER_ID no .env (Meta Business / Cloud API).',
+    hint: 'WhatsApp automático em configuração.',
   };
 }
 
@@ -61,7 +54,7 @@ export async function verifyWhatsAppCredentials(): Promise<{
   const token = process.env.WHATSAPP_ACCESS_TOKEN?.trim();
   const phoneId = process.env.WHATSAPP_PHONE_NUMBER_ID?.trim();
   if (!token || !phoneId) {
-    return { ok: false, error: 'WhatsApp API não configurada no servidor (.env).' };
+    return { ok: false, error: 'WhatsApp automático indisponível no momento.' };
   }
 
   const url = `https://graph.facebook.com/v21.0/${phoneId}?fields=display_phone_number,verified_name`;
@@ -102,9 +95,7 @@ export async function getWhatsAppStatusVerified(): Promise<WhatsAppStatus> {
     ...base,
     authenticated: false,
     authError: verify.error,
-    hint:
-      verify.error ||
-      'Falha na autenticação com a Meta. Revise WHATSAPP_ACCESS_TOKEN e WHATSAPP_PHONE_NUMBER_ID no .env.',
+    hint: verify.error || 'WhatsApp da empresa temporariamente indisponível.',
   };
 }
 
