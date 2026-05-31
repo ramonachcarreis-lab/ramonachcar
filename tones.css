@@ -1,0 +1,180 @@
+/* Tons semânticos — legíveis em claro e escuro (estilo Cursor: fundo escuro + texto claro + cor só no significado) */
+
+:root {
+  --tone-success-bg: #ecfdf5;
+  --tone-success-border: #6ee7b7;
+  --tone-success-text: #047857;
+  --tone-success-title: #065f46;
+
+  --tone-warning-bg: #fffbeb;
+  --tone-warning-border: #fcd34d;
+  --tone-warning-text: #b45309;
+  --tone-warning-title: #92400e;
+
+  --tone-danger-bg: #fef2f2;
+  --tone-danger-border: #fca5a5;
+  --tone-danger-text: #b91c1c;
+
+  --tone-info-bg: #eff6ff;
+  --tone-info-border: #93c5fd;
+  --tone-info-text: #1d4ed8;
+  --tone-info-title: #1e3a8a;
+
+  --tone-accent-bg: #f5f3ff;
+  --tone-accent-border: #c4b5fd;
+  --tone-accent-text: #5b21b6;
+  --tone-accent-title: #4c1d95;
+
+  --tone-clube-bg: #1a2540;
+  --tone-clube-border: #3d5280;
+  --tone-clube-title: #fcd34d;
+  --tone-clube-text: #e2e8f0;
+}
+
+html.dark {
+  --tone-success-bg: #0d2818;
+  --tone-success-border: #22c55e;
+  --tone-success-text: #86efac;
+  --tone-success-title: #ecfdf5;
+
+  --tone-warning-bg: #2a1f0a;
+  --tone-warning-border: #f59e0b;
+  --tone-warning-text: #fde68a;
+  --tone-warning-title: #fffbeb;
+
+  --tone-danger-bg: #1f0a0a;
+  --tone-danger-border: #7f1d1d;
+  --tone-danger-text: #fca5a5;
+
+  --tone-info-bg: #0f1a2e;
+  --tone-info-border: #3b82f6;
+  --tone-info-text: #bfdbfe;
+  --tone-info-title: #eff6ff;
+
+  --tone-accent-bg: #1a1030;
+  --tone-accent-border: #8b5cf6;
+  --tone-accent-text: #ddd6fe;
+  --tone-accent-title: #f5f3ff;
+
+  --tone-clube-bg: #141b2d;
+  --tone-clube-border: #2a3a5c;
+  --tone-clube-title: #fbbf24;
+  --tone-clube-text: #cbd5e1;
+}
+
+html:not(.dark) {
+  --tone-clube-bg: linear-gradient(135deg, #fffbeb 0%, #ffedd5 100%);
+}
+
+@layer utilities {
+  .ui-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+  }
+
+  .ui-caption {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    color: var(--color-text-muted);
+  }
+
+  .tone-box {
+    border-radius: 0.75rem;
+    border-width: 1px;
+    padding: 0.75rem 1rem;
+  }
+
+  .tone-success {
+    background: var(--tone-success-bg);
+    border-color: var(--tone-success-border);
+    color: var(--tone-success-text);
+  }
+  .tone-success .tone-title {
+    color: var(--tone-success-title);
+  }
+
+  .tone-warning {
+    background: var(--tone-warning-bg);
+    border-color: var(--tone-warning-border);
+    color: var(--tone-warning-text);
+  }
+  .tone-warning .tone-title {
+    color: var(--tone-warning-title);
+  }
+
+  .tone-danger {
+    background: var(--tone-danger-bg);
+    border-color: var(--tone-danger-border);
+    color: var(--tone-danger-text);
+  }
+
+  .tone-info {
+    background: var(--tone-info-bg);
+    border-color: var(--tone-info-border);
+    color: var(--tone-info-text);
+  }
+  .tone-info .tone-title {
+    color: var(--tone-info-title);
+  }
+
+  .tone-accent {
+    background: var(--tone-accent-bg);
+    border-color: var(--tone-accent-border);
+    color: var(--tone-accent-text);
+  }
+  .tone-accent .tone-title {
+    color: var(--tone-accent-title);
+  }
+
+  .tone-clube {
+    border-radius: 0.75rem;
+    border: 1px solid var(--tone-clube-border);
+    background: var(--tone-clube-bg);
+    color: var(--tone-clube-text);
+  }
+  html:not(.dark) .tone-clube {
+    background: linear-gradient(135deg, #fffbeb 0%, #ffedd5 100%);
+    border-color: #fcd34d66;
+  }
+  .tone-clube .tone-title {
+    color: var(--tone-clube-title);
+  }
+
+  .tone-item {
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface-muted);
+    color: var(--color-text);
+  }
+  .tone-item-selected {
+    border-color: var(--color-primary-400);
+    background: var(--color-primary-50);
+  }
+  .tone-item-muted {
+    opacity: 0.85;
+    border-color: var(--tone-warning-border);
+    background: var(--tone-warning-bg);
+    color: var(--tone-warning-text);
+  }
+
+  .tone-warning .ui-label {
+    color: var(--tone-warning-title);
+  }
+  .tone-success .ui-label {
+    color: var(--tone-success-title);
+  }
+  .tone-info .ui-label {
+    color: var(--tone-info-title);
+  }
+  .tone-accent .ui-label {
+    color: var(--tone-accent-title);
+  }
+
+  .tone-box p,
+  .tone-box label:not(.ui-label) {
+    color: inherit;
+  }
+}

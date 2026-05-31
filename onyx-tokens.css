@@ -1,0 +1,61 @@
+/**
+ * Onyx & Cyber Yellow — design tokens (High-Contrast Dark Mode).
+ * Mapeados para --color-* legados em index.css para migração gradual.
+ */
+
+:root {
+  --bg-canvas: #0a0a0f;
+  --bg-surface: #14141e;
+  --bg-surface-elevated: #1d1d2b;
+  --bg-input: #1d1d2b;
+
+  --accent-primary: #ffd700;
+  --accent-hover: #e5c100;
+  --accent-text: #0a0a0f;
+  --accent-focus-ring: rgba(255, 215, 0, 0.15);
+
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+
+  --border-subtle: #2a2a35;
+  --border-hover: rgba(255, 255, 255, 0.15);
+
+  --status-success: #10b981;
+  --status-danger: #ef4444;
+
+  --motion-ease-spring: cubic-bezier(0.25, 1, 0.5, 1);
+  --motion-duration: 200ms;
+  --radius-card: 12px;
+  --radius-input: 8px;
+}
+
+html.dark {
+  --color-bg-app: var(--bg-canvas);
+  --color-card-bg: var(--bg-surface);
+  --color-surface: var(--bg-surface);
+  --color-surface-elevated: var(--bg-surface-elevated);
+  --color-surface-muted: #101018;
+  --color-border: var(--border-subtle);
+  --color-border-strong: #35354a;
+  --color-text: var(--text-primary);
+  --color-text-muted: var(--text-secondary);
+  --color-text-subtle: var(--text-secondary);
+  --color-nav-bg: var(--bg-canvas);
+  --color-header-bg: var(--bg-canvas);
+  --color-accent-yellow: var(--accent-primary);
+  --color-primary-400: var(--accent-primary);
+  --color-primary-600: var(--accent-hover);
+  --color-primary-900: var(--accent-primary);
+  --color-rating-from: #1a1808;
+  --color-rating-to: #14141e;
+}
+
+html.light {
+  --bg-canvas: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --bg-input: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --border-subtle: #e2e8f0;
+}

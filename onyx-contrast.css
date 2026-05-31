@@ -1,0 +1,238 @@
+/**
+ * Onyx & Cyber Yellow — contraste WCAG e remapeamento de azuis/cinzas mudos.
+ */
+
+@layer utilities {
+  .ui-label,
+  .stat-label,
+  .app-stat-card .stat-label,
+  .app-switch-desc,
+  .app-switch-status {
+    color: var(--text-secondary, var(--color-text-muted));
+  }
+
+  html.dark .ui-label,
+  html.dark .stat-label {
+    color: var(--text-secondary) !important;
+  }
+
+  .text-data {
+    color: var(--text-primary, var(--color-text));
+  }
+
+  .text-caption {
+    color: var(--text-secondary, var(--color-text-muted));
+  }
+
+  /** Links e ações — amarelo; texto informativo — off-white */
+  .text-link-action {
+    color: var(--accent-primary);
+    font-weight: 700;
+  }
+
+  .text-link-action:hover {
+    color: var(--accent-hover);
+  }
+
+  html.dark .text-informative {
+    color: var(--text-primary) !important;
+  }
+
+  .crm-status-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+    background: var(--bg-surface-elevated, var(--color-surface-elevated));
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .crm-status-badge--success {
+    color: var(--status-success);
+    border-color: color-mix(in srgb, var(--status-success) 45%, transparent);
+    background: color-mix(in srgb, var(--status-success) 12%, var(--bg-surface-elevated));
+  }
+
+  .crm-status-badge--accent {
+    color: var(--accent-primary);
+    border-color: color-mix(in srgb, var(--accent-primary) 40%, transparent);
+    background: color-mix(in srgb, var(--accent-primary) 10%, var(--bg-surface-elevated));
+  }
+
+  .crm-status-badge--warning {
+    color: #fbbf24;
+    border-color: color-mix(in srgb, #fbbf24 35%, transparent);
+    background: color-mix(in srgb, #fbbf24 8%, var(--bg-surface-elevated));
+  }
+
+  .crm-status-badge--muted {
+    color: var(--text-secondary);
+  }
+
+  .login-screen {
+    background: var(--bg-canvas, var(--color-bg-app));
+  }
+
+  .login-screen .login-title {
+    color: var(--text-primary);
+  }
+
+  .login-screen .login-subtitle {
+    color: var(--text-secondary);
+  }
+
+  .login-screen .app-input {
+    background: var(--bg-input);
+    color: var(--text-primary);
+    border-color: var(--border-subtle);
+  }
+
+  .login-screen .app-input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.85;
+  }
+
+  .login-screen .app-input:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px var(--accent-focus-ring);
+  }
+
+  .login-screen .login-submit {
+    background: var(--accent-primary);
+    color: var(--accent-text, var(--bg-canvas));
+    font-weight: 700;
+  }
+
+  .login-screen .login-submit:hover:not(:disabled) {
+    background: var(--accent-hover);
+  }
+
+  .catalog-inventory-img {
+    aspect-ratio: 1;
+    width: 100%;
+    max-width: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+    background: var(--bg-canvas, #0a0a0f);
+  }
+
+  .catalog-inventory-img--studio {
+    object-fit: contain;
+    background: var(--bg-canvas, #0a0a0f);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .skeleton-pulse {
+    background: var(--bg-surface-elevated, #1d1d2b);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+/* Remapeamento global dark: azuis → off-white ou amarelo (ação) */
+@layer base {
+  html.dark {
+    --color-text-subtle: var(--text-secondary);
+  }
+
+  html.dark .text-blue-200,
+  html.dark .text-blue-500,
+  html.dark .text-sky-200,
+  html.dark .text-sky-300,
+  html.dark .text-sky-400,
+  html.dark .text-sky-700,
+  html.dark .text-sky-900,
+  html.dark .text-indigo-600,
+  html.dark .text-indigo-700,
+  html.dark .text-indigo-800,
+  html.dark .text-indigo-900,
+  html.dark .text-indigo-950,
+  html.dark .text-primary-700,
+  html.dark .text-primary-800,
+  html.dark .text-violet-800,
+  html.dark .text-violet-900 {
+    color: var(--text-secondary) !important;
+  }
+
+  html.dark a.text-sky-700,
+  html.dark button.text-primary-700,
+  html.dark .text-link-action,
+  html.dark a.font-bold.text-primary-700,
+  html.dark a.underline.text-primary-700 {
+    color: var(--accent-primary) !important;
+  }
+
+  html.dark .page-heading {
+    color: var(--text-primary) !important;
+  }
+
+  html.dark input:not([type='checkbox']):not([type='radio']):not([type='range']),
+  html.dark select,
+  html.dark textarea {
+    background-color: var(--bg-input) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-subtle) !important;
+  }
+
+  html.dark input::placeholder,
+  html.dark textarea::placeholder {
+    color: var(--text-secondary) !important;
+    opacity: 0.9;
+  }
+
+  html.dark .app-card-dark,
+  html.dark .tempo-live-card,
+  html.dark .tempo-timer-card {
+    background: var(--bg-surface) !important;
+    border-color: var(--border-subtle) !important;
+  }
+
+  html.dark .btn-primary {
+    background: var(--accent-primary) !important;
+    color: var(--accent-text, #0a0a0f) !important;
+  }
+
+  html.dark .btn-primary:hover:not(:disabled) {
+    background: var(--accent-hover) !important;
+  }
+
+  html.dark .mission-status-icon--route {
+    background: rgb(255 215 0 / 0.15);
+    border-color: rgb(255 215 0 / 0.45);
+    color: var(--accent-primary);
+  }
+
+  html.dark .mission-status-icon--setup {
+    background: rgb(255 215 0 / 0.1);
+    border-color: rgb(255 215 0 / 0.35);
+    color: var(--accent-hover);
+  }
+
+  html.dark .ops-live-badge--primary {
+    background: rgb(255 215 0 / 0.08);
+    border-color: rgb(255 215 0 / 0.28);
+  }
+
+  html.dark .ops-live-badge--primary .ops-live-badge__title {
+    color: var(--text-primary) !important;
+  }
+
+  html.dark .border-t-blue-400,
+  html.dark .border-t-indigo-400,
+  html.dark .border-t-purple-400 {
+    border-top-color: var(--border-subtle) !important;
+  }
+
+  html.dark .border-t-amber-400 {
+    border-top-color: var(--accent-primary) !important;
+  }
+
+  html.dark .border-t-emerald-500 {
+    border-top-color: var(--status-success) !important;
+  }
+}

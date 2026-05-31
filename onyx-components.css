@@ -1,0 +1,234 @@
+/**
+ * Componentes Onyx — inputs, botões, cards, painéis.
+ */
+
+@layer utilities {
+  .app-panel {
+    border-radius: var(--radius-card);
+    box-shadow: none;
+    transition: all var(--motion-duration) ease-in-out;
+  }
+
+  .app-input {
+    border-radius: var(--radius-input);
+    background: var(--bg-input, var(--color-surface-muted));
+    border: 1px solid var(--border-subtle, var(--color-border));
+    transition: all var(--motion-duration) ease-in-out;
+  }
+
+  .app-input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px var(--accent-focus-ring);
+  }
+
+  html.dark .app-input {
+    background: var(--bg-input);
+    border-color: var(--border-subtle);
+    color: var(--text-primary);
+  }
+
+  html.dark .app-input::placeholder {
+    color: var(--text-secondary);
+  }
+
+  .app-modal {
+    transition: transform 250ms var(--motion-ease-spring), opacity 250ms ease-out;
+  }
+
+  .page-heading {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  html.dark .page-heading {
+    color: var(--text-primary);
+  }
+
+  .settings-tab-btn--active {
+    color: var(--accent-primary);
+    border: 1px solid var(--border-subtle);
+  }
+
+  html.dark .settings-tab-btn--active {
+    background: var(--bg-surface-elevated);
+    color: var(--accent-primary);
+  }
+
+  .app-card-dark {
+    border-radius: var(--radius-card);
+    transition: all var(--motion-duration) ease-in-out;
+  }
+
+  html.dark .app-card-dark {
+    background: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .app-card-interactive:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-hover);
+  }
+
+  .app-card-interactive:active {
+    transform: translateY(0);
+  }
+
+  .btn-primary,
+  .btn-success,
+  .btn-secondary,
+  .btn-outline,
+  .btn-warning,
+  .btn-warning-outline,
+  .btn-ghost-on-dark {
+    transition: all var(--motion-duration) ease-in-out;
+  }
+
+  html.dark .btn-primary {
+    background: var(--accent-primary);
+    color: var(--accent-text);
+    font-weight: 600;
+  }
+
+  html.dark .btn-primary:hover:not(:disabled) {
+    background: var(--accent-hover);
+    filter: none;
+  }
+
+  html.dark .btn-primary:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  html.dark .btn-primary:disabled {
+    background: var(--border-subtle);
+    color: #71717a;
+    cursor: not-allowed;
+    opacity: 0.85;
+  }
+
+  .btn-secondary {
+    background: var(--bg-surface, #1a1a24);
+    color: var(--text-primary, #f4f4f5);
+    border: 1px solid var(--border-subtle, #272732);
+    font-weight: 600;
+  }
+
+  html.dark .btn-secondary:hover:not(:disabled) {
+    border-color: var(--border-hover);
+    background: var(--bg-surface-elevated);
+  }
+
+  .btn-success:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  .media-cover {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .app-stat-card {
+    border-radius: var(--radius-card);
+    transition: all var(--motion-duration) ease-in-out;
+  }
+
+  html.dark .app-stat-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-hover);
+    box-shadow: none;
+  }
+
+  .app-stat-card .stat-value {
+    font-variant-numeric: tabular-nums;
+  }
+
+  html.dark .tempo-live-card {
+    background: var(--bg-surface);
+    border-color: var(--border-subtle);
+  }
+
+  html.dark .app-hero-panel {
+    background: linear-gradient(160deg, #0a0a0f 0%, #14141e 55%, #1d1d2b 100%) !important;
+  }
+
+  html.dark .app-hero-btn-ghost {
+    background: rgba(255, 215, 0, 0.12) !important;
+    border: 1px solid var(--accent-primary) !important;
+    color: var(--text-primary) !important;
+  }
+
+  .nav-link-active {
+    background: rgba(255, 215, 0, 0.1);
+    color: var(--accent-primary) !important;
+    border: 1px solid rgba(255, 215, 0, 0.25);
+  }
+
+  .nav-link-active-compact {
+    color: var(--accent-primary) !important;
+  }
+
+  .proposal-preview {
+    border-radius: var(--radius-card);
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-surface);
+    overflow: hidden;
+  }
+
+  .proposal-preview__header {
+    background: var(--accent-primary);
+    color: var(--bg-canvas);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--accent-hover);
+  }
+
+  .proposal-preview__body {
+    padding: 1rem 1.25rem 1.25rem;
+    color: var(--text-primary);
+    user-select: text;
+    -webkit-user-select: text;
+  }
+
+  html:not(.dark) .proposal-preview__body {
+    color: #0f172a;
+  }
+
+  .crm-deal-card {
+    border-radius: var(--radius-card);
+    background: var(--bg-surface, var(--color-card-bg));
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all var(--motion-duration) ease-in-out;
+    text-align: left;
+  }
+
+  html:not(.dark) .crm-deal-card {
+    border-color: var(--color-border);
+    background: var(--color-card-bg);
+  }
+
+  .crm-deal-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-hover, var(--color-border-strong));
+  }
+
+  .crm-deal-card:active {
+    transform: translateY(0);
+  }
+
+  .crm-deal-card--closed {
+    border-color: rgba(16, 185, 129, 0.35);
+  }
+
+  .crm-deal-card--closed:hover {
+    border-color: rgba(16, 185, 129, 0.55);
+  }
+
+  .empty-state-panel {
+    border-radius: var(--radius-card);
+    border: 1px dashed var(--border-subtle, var(--color-border));
+    background: var(--bg-surface-muted, var(--color-surface-muted));
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--text-secondary, var(--color-text-muted));
+  }
+}
